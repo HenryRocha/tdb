@@ -7,13 +7,13 @@ public class TowerBehaviour : MonoBehaviour, IShooter
     // Start is called before the first frame update
 
     public float attackRadius = 2.0f;
-    public Transform target = null;
+    private Transform target = null;
 
     public GameObject shot;
     public Transform gun;
 
     
-    private float shootDelay = 0.5f;
+    private float shootDelay = 2f;
     private float _lastShoot = 0.0f;
     
     public AudioClip shootSFX;
@@ -31,7 +31,7 @@ public class TowerBehaviour : MonoBehaviour, IShooter
         Vector3 dir = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
         Vector3 rotation = lookRotation.eulerAngles;
-        transform.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+        transform.rotation = Quaternion.Euler(rotation.x, 0f, 0f);
 
         Shoot();
     }
@@ -59,7 +59,9 @@ public class TowerBehaviour : MonoBehaviour, IShooter
         if (Time.time - _lastShoot > shootDelay) {
             AudioManager.PlaySFX(shootSFX);
             _lastShoot = Time.time;
-            Instantiate(shot, gun.position, Quaternion.identity);
+            GameObject shotObject = Instantiate(shot, gun.position, Quaternion.identity) as GameObject;
+            ShotBehaviour shotBehaviour = shotObject.GetComponent<ShotBehaviour>();
+            shotBehaviour.direction = (target.position - gun.position).normalized;
         }
     }
 }
