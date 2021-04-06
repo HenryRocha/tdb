@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4cee8b27d0d649d49f3000db9fec7e5, type: 3}
   m_Name: ThrustBaseShot
   m_EditorClassIdentifier: 
-  thrustIntensity: {x: 0, y: 0}
+  thrustIntensity: {x: 10, y: 10}

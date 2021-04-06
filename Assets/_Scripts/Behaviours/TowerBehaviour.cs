@@ -12,10 +12,10 @@ public class TowerBehaviour : MonoBehaviour, IShooter
     public GameObject shot;
     public Transform gun;
 
-    
+
     private float shootDelay = 2f;
     private float _lastShoot = 0.0f;
-    
+
     public AudioClip shootSFX;
 
     void Start()
@@ -31,32 +31,40 @@ public class TowerBehaviour : MonoBehaviour, IShooter
         Vector3 dir = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
         Vector3 rotation = lookRotation.eulerAngles;
-        transform.rotation = Quaternion.Euler(rotation.x, 0f, 0f);
+        // transform.rotation = Quaternion.Euler(0f, rotation.y, 0f);
 
         Shoot();
     }
 
-    void UpdateTarget() {
+    void UpdateTarget()
+    {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         float shortestDistance = Mathf.Infinity;
         GameObject nearestEnemy = null;
-        foreach (GameObject enemy in enemies) {
+        foreach (GameObject enemy in enemies)
+        {
             float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-            if (distanceToEnemy < shortestDistance) {
+            if (distanceToEnemy < shortestDistance)
+            {
                 shortestDistance = distanceToEnemy;
                 nearestEnemy = enemy;
             }
         }
 
-        if (nearestEnemy != null && shortestDistance < attackRadius) {
+        if (nearestEnemy != null && shortestDistance < attackRadius)
+        {
             target = nearestEnemy.transform;
-        } else {
+        }
+        else
+        {
             target = null;
         }
     }
 
-    public void Shoot() {
-        if (Time.time - _lastShoot > shootDelay) {
+    public void Shoot()
+    {
+        if (Time.time - _lastShoot > shootDelay)
+        {
             AudioManager.PlaySFX(shootSFX);
             _lastShoot = Time.time;
             GameObject shotObject = Instantiate(shot, gun.position, Quaternion.identity) as GameObject;

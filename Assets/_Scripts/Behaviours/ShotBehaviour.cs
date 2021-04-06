@@ -10,7 +10,7 @@ public class ShotBehaviour : SteerableBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -19,7 +19,8 @@ public class ShotBehaviour : SteerableBehaviour
         Thrust(direction.x, direction.y);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) {
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
         if (collision.CompareTag("Tower")) return;
         IDamageable damageable = collision.gameObject.GetComponent(typeof(IDamageable)) as IDamageable;
         if (!(damageable is null))
@@ -27,6 +28,6 @@ public class ShotBehaviour : SteerableBehaviour
             damageable.TakeDamage();
         }
         Debug.Log("Testaaando");
-        Destroy(gameObject);
+        // Destroy(gameObject);
     }
 }
