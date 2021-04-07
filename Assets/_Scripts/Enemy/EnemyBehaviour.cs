@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour, IDamageable
 {
+    GameManager gm;
+
     [SerializeField]
     private int health = 2;
 
@@ -21,6 +23,7 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
     {
         // Populate the variable.
         enemyPathEnd = GameObject.FindGameObjectWithTag("EnemyPathEnd").GetComponent<Transform>();
+        gm = GameManager.GetInstance();
     }
 
     /// <summary>
@@ -30,6 +33,7 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
     {
         // If the enemy has reached the end of the path.
         if (transform.position == enemyPathEnd.position) {
+            gm.TakeDamage(health);
             Destroy(gameObject);
         }
     }
@@ -45,6 +49,7 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
     public void Die() {
         WaveSpawner.EnemiesAlive--;
         
+        gm.EnemyReward(10);
         GameObject effect = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
 		Destroy(effect, 1f);
         

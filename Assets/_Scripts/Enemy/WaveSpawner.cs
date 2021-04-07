@@ -18,6 +18,12 @@ public class WaveSpawner : MonoBehaviour
 
     private int currentWave = 0;
 
+    GameManager gm;
+
+    void Start() {
+        gm = GameManager.GetInstance();
+    }
+
     void Update()
     {
         // If there are no enemies alive, run the countdown and spawn a new wave.
@@ -27,6 +33,7 @@ public class WaveSpawner : MonoBehaviour
             if (countdown <= 0f)
             {
                 StartCoroutine(SpawnWave());
+                gm.RoundUp();
                 countdown = timeBetweenWaves;
             }
             else
