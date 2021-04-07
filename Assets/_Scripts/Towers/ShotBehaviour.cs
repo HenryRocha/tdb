@@ -6,6 +6,7 @@ public class ShotBehaviour : SteerableBehaviour
 {
 
     public Vector3 direction;
+    public int pierce;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,10 @@ public class ShotBehaviour : SteerableBehaviour
         if (!(damageable is null))
         {
             damageable.TakeDamage(1);
+        }
+        pierce--;
+        if (pierce <= 0) {
+            Destroy(gameObject);
         }
     }
 }

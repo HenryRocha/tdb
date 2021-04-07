@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackRadius: 2
-  shot: {fileID: 7843554234030365, guid: 6e611362cda0e436b94ac4bc10bf203b, type: 3}
+  shot: {fileID: 7843554234030365, guid: da3bf16eb444849caadc8069ebf69ee9, type: 3}
   gun: {fileID: 6164885620252132699}
   shootSFX: {fileID: 8300000, guid: 9ae61acccd6b1420a8ec50cbdc1f2d87, type: 3}
   renderers:

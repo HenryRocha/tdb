@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7439489765981890713}
   - component: {fileID: 7554264485966317957}
   m_Layer: 0
-  m_Name: BaseShot
+  m_Name: BasicShot
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 2046680333
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fc2246c7331e24658878a9a93452e072, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a4414d611d1dd40829261eacfa4827e3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -122,7 +122,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.4, y: 0.32}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -145,3 +145,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   td: {fileID: 11400000, guid: 523979cc4e09c479cbb29ca7a467cfa8, type: 2}
   direction: {x: 0, y: 0, z: 0}
+  pierce: 1
