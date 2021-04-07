@@ -4,6 +4,6 @@ using UnityEngine;
 
 public interface IDamageable
 {
-    void TakeDamage();
+    void TakeDamage(int amount);
     void Die();
 }

@@ -25,9 +25,7 @@ public class ShotBehaviour : SteerableBehaviour
         IDamageable damageable = collision.gameObject.GetComponent(typeof(IDamageable)) as IDamageable;
         if (!(damageable is null))
         {
-            damageable.TakeDamage();
+            damageable.TakeDamage(1);
         }
-        Debug.Log("Testaaando");
-        // Destroy(gameObject);
     }
 }

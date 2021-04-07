@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Tower
   - Enemy
+  - EnemyPath
+  - EnemyPathEnd
+  - Bullet
   layers:
   - Default
   - TransparentFX
