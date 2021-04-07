@@ -12,7 +12,7 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField]
     private Wave[] waves;
 
-    private int EnemiesAlive = 0;
+    public static int EnemiesAlive = 0;
 
     private float countdown = 2f;
 
