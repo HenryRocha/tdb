@@ -15,12 +15,23 @@ public class TowerBehaviour : MonoBehaviour, IShooter
 
     private float shootDelay = 2f;
     private float _lastShoot = 0.0f;
+    private int level = 0;
 
     public AudioClip shootSFX;
+
+    public Sprite[] renderers = new Sprite[3];
+    private SpriteRenderer spriteR;
 
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        spriteR = gameObject.GetComponent<SpriteRenderer>();
+        spriteR.sprite = renderers[level];
+    }
+
+    void ConfigTower(float fireRate, float attackRadius) {
+        shootDelay = 1f/fireRate;
+        this.attackRadius = attackRadius;
     }
 
     // Update is called once per frame
@@ -58,6 +69,13 @@ public class TowerBehaviour : MonoBehaviour, IShooter
         else
         {
             target = null;
+        }
+    }
+
+    void Upgrade() {
+        if (level < 2) {
+            level++;
+            spriteR.sprite = renderers[level];
         }
     }
 

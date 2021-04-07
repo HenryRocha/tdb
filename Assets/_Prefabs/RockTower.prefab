@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 6164885620801319254}
   - component: {fileID: 6164885620801319255}
   m_Layer: 0
-  m_Name: BaseTower
+  m_Name: RockTower
   m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -125,7 +125,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ab6a006c8fca4b42915000a790b51f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRadius: 5
+  attackRadius: 2
   shot: {fileID: 7843554234030365, guid: 6e611362cda0e436b94ac4bc10bf203b, type: 3}
   gun: {fileID: 6164885620252132699}
   shootSFX: {fileID: 8300000, guid: 9ae61acccd6b1420a8ec50cbdc1f2d87, type: 3}
+  renderers:
+  - {fileID: 21300000, guid: 4a96cdcef13d74dfeb950bd3a8957f9d, type: 3}
+  - {fileID: 21300000, guid: 1b69fb86982e44d6cab82f735dbd8596, type: 3}
+  - {fileID: 21300000, guid: c64fdf37f08514051b033e7f456263da, type: 3}
