@@ -9,6 +9,7 @@ public class GameManager
     private int lifes;
     private int money;
     private int round;
+    private int towerCost;
 
     public static GameManager GetInstance()
     {
@@ -22,14 +23,16 @@ public class GameManager
 
     private GameManager() {
         lifes = 100;
-        money = 300;
+        money = 100;
         round = 0;
+        towerCost = 50;
     }
 
     public void Reset() {
         lifes = 100;
-        money = 300;
+        money = 100;
         round = 0;
+        towerCost = 50;
     }
 
     public int GetRound() {
@@ -54,7 +57,8 @@ public class GameManager
     }
 
     public void PurchaseTower() {
-        this.money -= 100;
+        this.money -= this.towerCost;
+        this.towerCost += 10;
     }
 
     public void EnemyReward(int money) {

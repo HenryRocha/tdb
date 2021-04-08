@@ -34,7 +34,7 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
         // If the enemy has reached the end of the path.
         if (transform.position == enemyPathEnd.position) {
             gm.TakeDamage(health);
-            Destroy(gameObject);
+            Die();
         }
     }
 
@@ -42,11 +42,17 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
         health -= amount;
 
         if (health <= 0) {
-            Die();
+            Kill();
         }
     }
 
     public void Die() {
+        WaveSpawner.EnemiesAlive--;
+
+        Destroy(gameObject);
+    }
+
+    public void Kill() {
         WaveSpawner.EnemiesAlive--;
         
         gm.EnemyReward(10);
