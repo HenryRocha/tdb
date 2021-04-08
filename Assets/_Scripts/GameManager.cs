@@ -64,4 +64,8 @@ public class GameManager
     public void EnemyReward(int money) {
         this.money += money;
     }
+
+    public int GetTowerCost() {
+        return towerCost;
+    }
 }
