@@ -2044,8 +2044,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb8acaee88d061249b9dab80274e6a31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerToPlace: {fileID: 6164885620801319248, guid: 5e1e0ab4e35624f7daea9161d45a08e8,
-    type: 3}
+  towerToPlace:
+  - {fileID: 6164885620801319248, guid: 5e1e0ab4e35624f7daea9161d45a08e8, type: 3}
+  - {fileID: 6164885620801319248, guid: aea80fe618b90434f8ea9138590b4d7b, type: 3}
+  - {fileID: 6164885620801319248, guid: d6e5da0ee39644f20907768b52976377, type: 3}
 --- !u!19719996 &490865744
 TilemapCollider2D:
   m_ObjectHideFlags: 0

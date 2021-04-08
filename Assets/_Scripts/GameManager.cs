@@ -53,6 +53,10 @@ public class GameManager
         return money;
     }
 
+    public void PurchaseTower() {
+        this.money -= 100;
+    }
+
     public void EnemyReward(int money) {
         this.money += money;
     }
