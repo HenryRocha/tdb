@@ -16,10 +16,9 @@ public class TilemapScript : MonoBehaviour
     {
         tilemap = GetComponent<Tilemap>();
         grid = transform.parent.GetComponentInParent<Grid>();
-
         gm = GameManager.GetInstance();
         
-        Debug.Log($"{tilemap.cellBounds}");
+        this.towerPlacements = new bool[tilemap.cellBounds.size.x, tilemap.cellBounds.size.y];
     }
 
     void OnMouseDown()
@@ -32,16 +31,26 @@ public class TilemapScript : MonoBehaviour
             Vector3 cellWorldPos = grid.CellToWorld(cellGridPos);
             TileBase clickedTile = tilemap.GetTile(cellGridPos);
 
-            cellWorldPos += grid.cellSize / 2;
-            // Debug.Log(cellWorldPos.y);
-            cellWorldPos.y += grid.cellSize.y / 2;
-            Debug.Log(cellWorldPos);
+            int matrixPosX = GetMatrixPosFromCellGridPosX(cellGridPos.x);
+            int matrixPosY = GetMatrixPosFromCellGridPosY(cellGridPos.y);
 
-            if (clickedTile.name == "52")
+            cellWorldPos += grid.cellSize / 2;
+            cellWorldPos.y += grid.cellSize.y / 2;
+
+            if (clickedTile.name == "52" && !this.towerPlacements[matrixPosX, matrixPosY])
             {
                 gm.PurchaseTower();
                 Instantiate(towerToPlace[Random.Range(0, 3)], cellWorldPos, Quaternion.identity);
+                this.towerPlacements[matrixPosX, matrixPosY] = true;
             }
         }
+    }
+
+    int GetMatrixPosFromCellGridPosX(int x) {
+        return x + tilemap.cellBounds.size.x / 2;
+    }
+
+    int GetMatrixPosFromCellGridPosY(int y) {
+        return y + tilemap.cellBounds.size.y / 2;
     }
 }

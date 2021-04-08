@@ -22,15 +22,20 @@ public class ShotBehaviour : SteerableBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Tower")) return;
-        IDamageable damageable = collision.gameObject.GetComponent(typeof(IDamageable)) as IDamageable;
-        if (!(damageable is null))
+        if (!collision.CompareTag("Tower"))
         {
-            damageable.TakeDamage(1);
-        }
-        pierce--;
-        if (pierce <= 0) {
-            Destroy(gameObject);
+            IDamageable damageable = collision.gameObject.GetComponent(typeof(IDamageable)) as IDamageable;
+     
+            if (!(damageable is null))
+            {
+                damageable.TakeDamage(1);
+
+                if (pierce == 1) {
+                    Destroy(gameObject);
+                } else {
+                    pierce--;
+                }
+            }
         }
     }
 }
