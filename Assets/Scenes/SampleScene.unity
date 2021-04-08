@@ -276,6 +276,8 @@ GameObject:
   - component: {fileID: 490865740}
   - component: {fileID: 490865742}
   - component: {fileID: 490865741}
+  - component: {fileID: 490865744}
+  - component: {fileID: 490865743}
   m_Layer: 8
   m_Name: Tilemap
   m_TagString: Untagged
@@ -2030,6 +2032,36 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &490865743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490865739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb8acaee88d061249b9dab80274e6a31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerToPlace: {fileID: 6164885620801319248, guid: 5e1e0ab4e35624f7daea9161d45a08e8,
+    type: 3}
+--- !u!19719996 &490865744
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490865739}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2343,6 +2375,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireTower
       objectReference: {fileID: 0}
+    - target: {fileID: 6164885620801319248, guid: aea80fe618b90434f8ea9138590b4d7b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6164885620801319253, guid: aea80fe618b90434f8ea9138590b4d7b,
         type: 3}
       propertyPath: m_RootOrder
@@ -2486,12 +2523,12 @@ PrefabInstance:
     - target: {fileID: 6164885620801319253, guid: 5e1e0ab4e35624f7daea9161d45a08e8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4
+      value: -4.37
       objectReference: {fileID: 0}
     - target: {fileID: 6164885620801319253, guid: 5e1e0ab4e35624f7daea9161d45a08e8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: -1.17
       objectReference: {fileID: 0}
     - target: {fileID: 6164885620801319253, guid: 5e1e0ab4e35624f7daea9161d45a08e8,
         type: 3}
@@ -2532,6 +2569,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6164885620801319255, guid: 5e1e0ab4e35624f7daea9161d45a08e8,
+        type: 3}
+      propertyPath: attackRadius
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e1e0ab4e35624f7daea9161d45a08e8, type: 3}
@@ -2842,6 +2884,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RockTower
+      objectReference: {fileID: 0}
+    - target: {fileID: 6164885620801319248, guid: d6e5da0ee39644f20907768b52976377,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6164885620801319253, guid: d6e5da0ee39644f20907768b52976377,
         type: 3}
