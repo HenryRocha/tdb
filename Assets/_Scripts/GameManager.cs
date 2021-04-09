@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager
 {
@@ -50,6 +51,12 @@ public class GameManager
 
     public void TakeDamage(int damage) {
         lifes -= damage;
+
+        if (lifes <= 0) {
+            Reset();
+            WaveSpawner.EnemiesAlive = 0;
+            SceneManager.LoadScene("YouLoseScene");
+        }
     }
 
     public int GetMoney() {

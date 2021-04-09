@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class WaveSpawner : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class WaveSpawner : MonoBehaviour
     GameManager gm;
 
     void Start() {
+        Debug.Log("Started wave spawner!");
         gm = GameManager.GetInstance();
     }
 
@@ -35,6 +37,10 @@ public class WaveSpawner : MonoBehaviour
                 StartCoroutine(SpawnWave());
                 gm.RoundUp();
                 countdown = timeBetweenWaves;
+            }
+            else if (currentWave >= waves.Length) {
+                gm.Reset();
+                SceneManager.LoadScene("YouWinScene");
             }
             else
             {
