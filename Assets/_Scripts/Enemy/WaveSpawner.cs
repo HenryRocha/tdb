@@ -30,7 +30,7 @@ public class WaveSpawner : MonoBehaviour
         if (EnemiesAlive <= 0)
         {
             // At the end of the countdown, spawn a new wave of enemies and reset the countdown.
-            if (countdown <= 0f)
+            if (countdown <= 0f && currentWave < waves.Length)
             {
                 StartCoroutine(SpawnWave());
                 gm.RoundUp();
@@ -42,7 +42,6 @@ public class WaveSpawner : MonoBehaviour
                 countdown -= Time.deltaTime;
                 countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
             }
-
         }
     }
 
