@@ -23,7 +23,7 @@ public class TilemapScript : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (gm.GetMoney() >= 100) {
+        if (gm.GetMoney() >= gm.GetTowerCost()) {
             Debug.Log("Click on tilemap!");
 
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

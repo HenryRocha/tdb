@@ -2923,25 +2923,16 @@ MonoBehaviour:
     count: 20
     rate: 5
   - enemy: {fileID: 6389766339751503063, guid: cc40d5445d7b93e4fa41c3ccb3e55534, type: 3}
-    count: 20
+    count: 40
     rate: 5
   - enemy: {fileID: 6389766339751503063, guid: cc40d5445d7b93e4fa41c3ccb3e55534, type: 3}
-    count: 20
+    count: 50
     rate: 5
   - enemy: {fileID: 6389766339751503063, guid: cc40d5445d7b93e4fa41c3ccb3e55534, type: 3}
-    count: 20
+    count: 60
     rate: 5
   - enemy: {fileID: 6389766339751503063, guid: cc40d5445d7b93e4fa41c3ccb3e55534, type: 3}
-    count: 20
-    rate: 5
-  - enemy: {fileID: 6389766339751503063, guid: cc40d5445d7b93e4fa41c3ccb3e55534, type: 3}
-    count: 20
-    rate: 5
-  - enemy: {fileID: 6389766339751503063, guid: cc40d5445d7b93e4fa41c3ccb3e55534, type: 3}
-    count: 20
-    rate: 5
-  - enemy: {fileID: 6389766339751503063, guid: cc40d5445d7b93e4fa41c3ccb3e55534, type: 3}
-    count: 20
+    count: 100
     rate: 5
 --- !u!4 &2084289417
 Transform:

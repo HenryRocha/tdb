@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8793034615758946262}
   - component: {fileID: 7439489765981890713}
   - component: {fileID: 7554264485966317957}
+  - component: {fileID: 7094701316251904169}
   m_Layer: 0
   m_Name: FireShot
   m_TagString: Bullet
@@ -146,3 +147,16 @@ MonoBehaviour:
   td: {fileID: 11400000, guid: 523979cc4e09c479cbb29ca7a467cfa8, type: 2}
   direction: {x: 0, y: 0, z: 0}
   pierce: 1
+--- !u!114 &7094701316251904169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7843554234030365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be822e13214f54242a0415ae253a2677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyTarget: {fileID: 0}
