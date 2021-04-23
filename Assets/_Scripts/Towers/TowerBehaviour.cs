@@ -6,6 +6,8 @@ public class TowerBehaviour : MonoBehaviour, IShooter
 {
     // Start is called before the first frame update
 
+    public string towerName;
+
     public float attackRadius = 2.0f;
     private Transform target = null;
 
@@ -72,7 +74,7 @@ public class TowerBehaviour : MonoBehaviour, IShooter
         }
     }
 
-    void Upgrade() {
+    public void Upgrade() {
         if (level < 2) {
             level++;
             spriteR.sprite = renderers[level];

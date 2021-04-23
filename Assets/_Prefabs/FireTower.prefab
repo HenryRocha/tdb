@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ab6a006c8fca4b42915000a790b51f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerName: firetower
   attackRadius: 4
   shot: {fileID: 7843554234030365, guid: cbc0ce5c27c5d443083da59a0b7aa4c1, type: 3}
   gun: {fileID: 6164885620252132699}
