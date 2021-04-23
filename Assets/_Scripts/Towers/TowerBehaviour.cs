@@ -17,7 +17,7 @@ public class TowerBehaviour : MonoBehaviour, IShooter
 
     private float shootDelay = 2f;
     private float _lastShoot = 0.0f;
-    private int level = 0;
+    public int level = 0;
 
     public AudioClip shootSFX;
 

@@ -114,7 +114,7 @@ public class TilemapScript : MonoBehaviour
 
         // Debug.Log($"T1 name: {t1.GetComponent<TowerBehaviour>().towerName}");
 
-        if (t1.GetComponent<TowerBehaviour>().towerName == t2.GetComponent<TowerBehaviour>().towerName) {
+        if (t1.GetComponent<TowerBehaviour>().towerName == t2.GetComponent<TowerBehaviour>().towerName && t1.GetComponent<TowerBehaviour>().level == t2.GetComponent<TowerBehaviour>().level) {
             Destroy(t2);
             this.towerPlacements[matrixPosXt2, matrixPosYt2] = null;
             t1.GetComponent<TowerBehaviour>().Upgrade();
