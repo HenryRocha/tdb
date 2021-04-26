@@ -2979,7 +2979,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sfxSource: {fileID: 1110094964}
   ambienceSource: {fileID: 582636854}
-  music: {fileID: 8300000, guid: d7bb69c5fe50447f4b0480d453b8b181, type: 3}
+  music: {fileID: 8300000, guid: e931987ba98cd43578770e65d0c6a8a6, type: 3}
 --- !u!4 &1467188813
 Transform:
   m_ObjectHideFlags: 0
