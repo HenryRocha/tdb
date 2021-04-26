@@ -18,6 +18,6 @@ public class UI_TowerCost : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = $"Custo Torre: {gm.GetTowerCost()}";
+        text.text = $"Tower Cost: {gm.GetTowerCost()}";
     }
 }
