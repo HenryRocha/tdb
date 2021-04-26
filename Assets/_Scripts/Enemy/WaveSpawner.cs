@@ -21,7 +21,8 @@ public class WaveSpawner : MonoBehaviour
 
     GameManager gm;
 
-    void Start() {
+    void Start()
+    {
         Debug.Log("Started wave spawner!");
         gm = GameManager.GetInstance();
     }
@@ -38,7 +39,8 @@ public class WaveSpawner : MonoBehaviour
                 gm.RoundUp();
                 countdown = timeBetweenWaves;
             }
-            else if (currentWave >= waves.Length) {
+            else if (currentWave >= waves.Length)
+            {
                 gm.Reset();
                 SceneManager.LoadScene("YouWinScene");
             }
@@ -57,13 +59,18 @@ public class WaveSpawner : MonoBehaviour
         Wave wave = waves[currentWave];
 
         // Update the number of enemies alive.
-        EnemiesAlive = wave.count;
 
         // Spawn all the enemies, async.
-        for (int i = 0; i < wave.count; i++)
+        foreach (var enemy in wave.enemies)
         {
-            SpawnEnemy(wave.enemy);
-            yield return new WaitForSeconds(1f / wave.rate);
+            EnemiesAlive += enemy.count;
+
+            for (int i = 0; i < enemy.count; i++)
+            {
+                SpawnEnemy(enemy.enemy);
+
+                yield return new WaitForSeconds(1f / wave.rate);
+            }
         }
 
         // Update the current wave.
