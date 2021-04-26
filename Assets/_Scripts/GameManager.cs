@@ -68,6 +68,10 @@ public class GameManager
         this.towerCost += 10;
     }
 
+    public void UpgradeTower(int level) {
+        this.money -= (level+1)*200;
+    }
+
     public void EnemyReward(int money) {
         this.money += money;
     }

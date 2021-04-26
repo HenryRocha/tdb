@@ -78,6 +78,8 @@ public class TowerBehaviour : MonoBehaviour, IShooter
         if (level < 2) {
             level++;
             spriteR.sprite = renderers[level];
+            shootDelay *= (float) 9/10;
+            attackRadius *= (float) 1.2;
         }
     }
 
