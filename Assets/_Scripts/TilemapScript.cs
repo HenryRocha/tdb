@@ -114,11 +114,20 @@ public class TilemapScript : MonoBehaviour
 
         // Debug.Log($"T1 name: {t1.GetComponent<TowerBehaviour>().towerName}");
 
-        if (t1.GetComponent<TowerBehaviour>().towerName == t2.GetComponent<TowerBehaviour>().towerName && t1.GetComponent<TowerBehaviour>().level == t2.GetComponent<TowerBehaviour>().level) {
+        if (CanMerge(t1.GetComponent<TowerBehaviour>(), t2.GetComponent<TowerBehaviour>())) {
             Destroy(t2);
             this.towerPlacements[matrixPosXt2, matrixPosYt2] = null;
+            gm.UpgradeTower(t1.GetComponent<TowerBehaviour>().level);
             t1.GetComponent<TowerBehaviour>().Upgrade();
             ResetSelections();
         }
+    }
+
+    private bool CanMerge(TowerBehaviour towerOne, TowerBehaviour towerTwo) {
+        bool sameType = towerOne.towerName == towerTwo.towerName;
+        bool sameLevel = towerOne.level == towerTwo.level;
+        bool maxLevel = towerOne.level < 2;
+        bool hasMoney = (towerOne.level+1)*200 < gm.GetMoney();
+        return maxLevel && sameLevel && sameType && hasMoney;
     }
 }
